@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Time Shifter",
-    "version": "1.0.15",
+    "version": "1.1.1",
     "description": "Adjusts the browser's internal clock by a custom offset. Useful for time-sensitive features.",
     "permissions": [
       "storage",
@@ -11,7 +11,8 @@
       "<all_urls>"
     ],
     "action": {
-      "default_title": "Time Shifter"
+      "default_title": "Time Shifter",
+      "default_popup": "options.html"
     },
     "icons": {
       "16": "icon16.png",

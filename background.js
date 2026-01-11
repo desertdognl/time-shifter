@@ -25,3 +25,24 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         });
     }
 });
+
+// Open options page when the extension icon is clicked.
+const openOptionsPopupWindow = () => {
+    chrome.windows.create({
+        url: chrome.runtime.getURL("options.html"),
+        type: 'popup',
+        width: 700,
+        height: 700,
+        focused: true
+    });
+};
+
+chrome.action.onClicked.addListener(() => {
+    if (chrome.action && chrome.action.openPopup) {
+        chrome.action.openPopup().catch(() => {
+            openOptionsPopupWindow();
+        });
+    } else {
+        openOptionsPopupWindow();
+    }
+});
